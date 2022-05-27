@@ -12,7 +12,7 @@ I made myself a symlink to main.py for easier access across my linux system
 Don't be scared if you use it in the wrong folder, before renaming the tool gives you a hint which files exactly get renamed to what and you have to confirm (UX; wooooo!)
 
 ## How it works
-Ehm. A shitton of regex basically. That makes it kinda unreadable but it was easy to code. But thats not what this segment is about :D
+Ehm. A shitton of regex basically. That makes it kinda unreadable but it was easy to code. Thats not what this segment is about tho :D
 
 ### Example
  `Awesome Series with LONG name S3E01 GerEngSub AAC 1080p WebDL x264-SubGroup.mkv`
