@@ -19,6 +19,7 @@ for file in files:
     file = file.lower()
     file = re.sub('german|.265|.264|hevc|ac3|hdr|webdl|web.*dl|1080p|720p|480p|2160p|fullhd|eac3|web|aac|bluray|dubbed|ger\S{3}sub|4sf|dts|dl','', file)
     file = re.sub('\.(?=[^.]*\.)', '-', file)
+    file = re.sub(' ', '-', file)
     file = re.sub('-{2,}', '-', file)
     file = re.sub('^-|', '', file)
     file = re.sub('(?<=\d-)(.*)(?=\..{3}$)', '', file)
