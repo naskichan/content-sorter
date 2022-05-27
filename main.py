@@ -17,14 +17,14 @@ def toUpper(obj):
 for file in files:
     original = file
     file = file.lower()
-    file = re.sub('german|.265|.264|hevc|ac3|hdr|webdl|web.*dl|1080p|720p|480p|2160p|fullhd|eac3|web|aac|bluray|dubbed|ger\S{3}sub|4sf|dts|dl','', file)
-    file = re.sub('\.(?=[^.]*\.)', '-', file)
-    file = re.sub(' ', '-', file)
-    file = re.sub('-{2,}', '-', file)
-    file = re.sub('^-|', '', file)
-    file = re.sub('(?<=\d-)(.*)(?=\..{3}$)', '', file)
-    file = re.sub('-\.', '.', file)
-    file = re.sub('.\d{1,2}', toUpper, file)
+    file = re.sub('german|.265|.264|hevc|ac3|hdr|webdl|web.*dl|1080p|720p|480p|2160p|fullhd|eac3|web|aac|bluray|dubbed|ger\S{3}sub|4sf|dts|dl','', file) # remove common codec or video related keywords. Kinda dirty, but works.
+    file = re.sub('\.(?=[^.]*\.)', '-', file) # replace dots with dashes
+    file = re.sub(' ', '-', file) # replace spaces with dashes
+    file = re.sub('-{2,}', '-', file) # replace multiple dashes with one
+    file = re.sub('^-|', '', file) # remove leading dashes
+    file = re.sub('(?<=\d-)(.*)(?=\..{3}$)', '', file) # idk really, copilot doesnt know either
+    file = re.sub('-\.', '.', file) # replace dashes with dots
+    file = re.sub('.\d{1,2}', toUpper, file) # Season and episode letter to uppercase
     file = re.sub('(?<=[A-Z])(?=\d[A-Z.])', '0', file)
     changes[original] = file
 
